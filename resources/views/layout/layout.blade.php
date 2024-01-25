@@ -50,6 +50,7 @@
 
     <!-- Volt CSS -->
     <link type="text/css" href="{{ URL::asset('/assets/css/volt.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>{{ $title }}</title>
 </head>
 
