@@ -26,16 +26,22 @@ Route::get('/', function () {
 });
 
 // AUTH ROUTE
-Route::get('login', [AuthController::class, 'indexLogin']);
+Route::get('login', [AuthController::class, 'indexLogin'])->name('login');
 Route::get('register', [AuthController::class, 'indexRegister']);
 Route::post('login', [AuthController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
 Route::post('logout', [AuthController::class, 'logout']);
 
-Route::get('dashboard', [DashboardController::class, 'index']);
-Route::resource('user', UserController::class);
-Route::resource('dokumen', DocumentController::class);
-Route::resource('psikoedukasi', PsikoedukasiController::class);
-Route::resource('relaksasi', RelaksasiController::class);
-Route::resource('restrukturisasi', RestrukturisasiController::class);
-Route::resource('terapi', TerapiController::class);
+Route::group(['middleware' => ['auth', 'cekrole:admin']], function () {
+    Route::get('dashboard', [DashboardController::class, 'index']);
+    Route::resource('user', UserController::class);
+    Route::resource('dokumen', DocumentController::class);
+    Route::resource('psikoedukasi', PsikoedukasiController::class);
+    Route::resource('relaksasi', RelaksasiController::class);
+    Route::resource('restrukturisasi', RestrukturisasiController::class);
+    Route::resource('terapi', TerapiController::class);
+});
+
+Route::get('404', function () {
+    return view('pages.404');
+});

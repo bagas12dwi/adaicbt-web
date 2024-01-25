@@ -111,18 +111,6 @@
                     </ul>
                 </div>
             </li>
-            <li class="nav-item {{ $title == 'Dokumen' ? 'active' : '' }}">
-                <a href="{{ url('dokumen') }}" class="nav-link">
-                    <span class="sidebar-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                            class="bi bi-file-earmark-fill icon icon-xs me-2" viewBox="0 0 16 16">
-                            <path
-                                d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2z" />
-                        </svg>
-                    </span>
-                    <span class="sidebar-text">Dokumen</span>
-                </a>
-            </li>
         </ul>
     </div>
 </nav>

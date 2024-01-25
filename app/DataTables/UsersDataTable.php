@@ -2,6 +2,7 @@
 
 namespace App\DataTables;
 
+use App\Models\Document;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
@@ -35,7 +36,7 @@ class UsersDataTable extends DataTable
      */
     public function query(User $model): QueryBuilder
     {
-        return $model->newQuery();
+        return $model->newQuery()->with('document')->select('users.*');
     }
 
     /**

@@ -69,4 +69,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('\App\Models\Terapi');
     }
+
+    public function document()
+    {
+        return $this->belongsTo('\App\Models\Document');
+    }
 }
