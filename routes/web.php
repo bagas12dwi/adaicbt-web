@@ -8,6 +8,7 @@ use App\Http\Controllers\RelaksasiController;
 use App\Http\Controllers\RestrukturisasiController;
 use App\Http\Controllers\TerapiController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,9 +22,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AuthController::class, 'indexLogin']);
 
 // AUTH ROUTE
 Route::get('login', [AuthController::class, 'indexLogin'])->name('login');
