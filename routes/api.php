@@ -27,7 +27,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/task', [TaskController::class, 'index']);
-Route::get('document', [DocumentController::class, 'getAllDocument']);
+Route::post('document', [DocumentController::class, 'getAllDocument']);
 Route::post('privilege', [PrivilegeController::class, 'cekPrivilege']);
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
