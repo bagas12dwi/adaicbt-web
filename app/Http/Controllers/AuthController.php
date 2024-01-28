@@ -38,7 +38,7 @@ class AuthController extends Controller
         ]);
 
         $nama = $validated['full_name'];
-        $phone = $validated['phone_number'];
+        $phone = ltrim($validated['phone_number'], '0');
         $email = $validated['email'];
         $password = bcrypt($validated['password']);
 

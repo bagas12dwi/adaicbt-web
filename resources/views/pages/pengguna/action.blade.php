@@ -1,5 +1,8 @@
 <div class="d-flex align-middle">
 
+    <a href="{{ 'https://wa.me/62' . $user->phone_number }}" target="_blank" class="btn btn-success me-2">
+        <i class="bi bi-telephone"></i>
+    </a>
     @if ($user->document)
         <a href="{{ url('user/' . $user->id . '/edit') }}" class="btn btn-primary me-2">
             <i class="bi bi-pencil-fill"></i>
@@ -8,7 +11,7 @@
             <i class="bi bi-eye"></i>
         </a>
     @else
-        <a href="{{ url('user/' . $user->id) }}" class="btn btn-success me-2">
+        <a href="{{ url('user/' . $user->id) }}" class="btn btn-warning me-2">
             <i class="bi bi-file-earmark"></i>
         </a>
     @endif
